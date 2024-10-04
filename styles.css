@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Configuration de base pour le corps */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e0e0e0, #ffffff);
+}
+
+/* Conteneur principal du formulaire */
+.form-container {
+    width: 100%;
+    max-width: 380px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animation d'apparition du formulaire */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Titre du formulaire */
+.form-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Style des champs du formulaire */
+.form-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+/* Les inputs avec bordure inférieure uniquement */
+input {
+    width: 100%;
+    padding: 0.8rem 0;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    font-size: 1rem;
+    background: transparent;
+    outline: none;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+/* Labels initialement à l'intérieur  des champs */
+
+label.floating-label {
+    position: absolute;
+    left: 0;
+    top: 1.5rem;
+    font-size: 0.85rem;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Label qui flotte au-dessus lors du focus */
+input:focus + .floating-label
+/* input:not(:placeholder-shown) + .floating-label { */
+ {
+    top: -0.8rem; /* Position du label au-dessus */
+    font-size: 1rem; /* Réduire la taille du label */
+    color: #007bff; /* Changer la couleur */
+}
+
+/* Icônes intégrées aux champs */
+.input-icon {
+    position: absolute;
+    right: 0;
+    bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #aaa;
+    pointer-events: none;
+}
+
+/* Animation des bordures */
+.underline-animation {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* Bordure qui s'anime du centre vers les deux côtés */
+input:focus ~ .underline-animation {
+    width: 100%;
+    left: 0;
+}
+
+/* Bouton de soumission */
+.submit-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
